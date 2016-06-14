@@ -1,6 +1,8 @@
 FROM php:5.6-apache
 
 COPY conf/ /etc/apache2
+COPY templates/ /var/apache2/templates
+COPY apache2-foreground /usr/local/bin/
 
 RUN apt-get update && \
          apt-get install -y nano
